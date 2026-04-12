@@ -2,12 +2,31 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const submenuOwner = document.querySelector(".has-submenu");
 const submenuToggle = document.querySelector(".submenu-toggle");
-const navLinks = document.querySelectorAll(".site-nav a");
+const tabLinks = [...document.querySelectorAll(".tab-link[data-tab]")];
+const tabSections = [...document.querySelectorAll(".tab-section[data-tab-panel]")];
+const projectTabButtons = [...document.querySelectorAll(".project-tab[data-project-tab]")];
+const projectPanels = [...document.querySelectorAll(".project-pane[data-project-panel]")];
 const yearEl = document.querySelector("#year");
 
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+const validTabs = new Set(tabSections.map((section) => section.dataset.tabPanel));
+const validProjectPanes = new Set(projectPanels.map((panel) => panel.dataset.projectPanel));
+
+const closeMobileNav = () => {
+  if (window.innerWidth <= 780 && siteNav && menuToggle) {
+    siteNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  }
+
+  if (submenuOwner && submenuToggle) {
+    submenuOwner.classList.remove("submenu-open");
+    submenuToggle.setAttribute("aria-expanded", "false");
+    submenuToggle.textContent = "+";
+  }
+};
 
 if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
@@ -15,11 +34,10 @@ if (menuToggle && siteNav) {
     menuToggle.setAttribute("aria-expanded", String(!expanded));
     siteNav.classList.toggle("open");
 
-    if (expanded && submenuOwner) {
+    if (expanded && submenuOwner && submenuToggle) {
       submenuOwner.classList.remove("submenu-open");
-      if (submenuToggle) {
-        submenuToggle.setAttribute("aria-expanded", "false");
-      }
+      submenuToggle.setAttribute("aria-expanded", "false");
+      submenuToggle.textContent = "+";
     }
   });
 }
@@ -32,64 +50,94 @@ if (submenuToggle && submenuOwner) {
   });
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (window.innerWidth <= 780 && siteNav && menuToggle) {
-      siteNav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      if (submenuOwner && submenuToggle) {
-        submenuOwner.classList.remove("submenu-open");
-        submenuToggle.setAttribute("aria-expanded", "false");
-        submenuToggle.textContent = "+";
-      }
+const setActiveProjectPane = (paneName, updateHash = true) => {
+  const pane = validProjectPanes.has(paneName) ? paneName : "before-after";
+
+  projectTabButtons.forEach((button) => {
+    const isActive = button.dataset.projectTab === pane;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-selected", String(isActive));
+  });
+
+  projectPanels.forEach((panel) => {
+    panel.classList.toggle("active", panel.dataset.projectPanel === pane);
+  });
+
+  if (updateHash) {
+    history.replaceState(null, "", `#${pane}`);
+  }
+
+  return pane;
+};
+
+const setActiveTab = (tabName, projectPane = null, updateHash = true) => {
+  const safeTab = validTabs.has(tabName) ? tabName : "home";
+
+  tabSections.forEach((section) => {
+    section.classList.toggle("active", section.dataset.tabPanel === safeTab);
+  });
+
+  tabLinks.forEach((link) => {
+    const isActive = link.dataset.tab === safeTab;
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
     }
+  });
+
+  let activeProjectPane = null;
+  if (safeTab === "projects") {
+    activeProjectPane = setActiveProjectPane(projectPane || "before-after", false);
+  }
+
+  if (updateHash) {
+    const targetHash = safeTab === "projects" && activeProjectPane ? activeProjectPane : safeTab;
+    history.replaceState(null, "", `#${targetHash}`);
+  }
+
+  closeMobileNav();
+  window.scrollTo({ top: 0, behavior: "auto" });
+};
+
+tabLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    setActiveTab(link.dataset.tab, link.dataset.projectPane || null, true);
   });
 });
 
-const sections = [...document.querySelectorAll("main section[id]")];
+projectTabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setActiveTab("projects", button.dataset.projectTab, true);
+  });
+});
 
-if (sections.length) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        const targetId = entry.target.id;
-        navLinks.forEach((link) => {
-          const href = link.getAttribute("href");
-          if (href === `#${targetId}` || (targetId === "before-after" && href === "#projects") || (targetId === "donation-partners" && href === "#projects")) {
-            link.setAttribute("aria-current", "page");
-          } else {
-            link.removeAttribute("aria-current");
-          }
-        });
-      });
-    },
-    { threshold: 0.45 }
-  );
-
-  sections.forEach((section) => observer.observe(section));
+const initialHash = window.location.hash.replace("#", "");
+if (validTabs.has(initialHash)) {
+  setActiveTab(initialHash, null, false);
+} else if (validProjectPanes.has(initialHash)) {
+  setActiveTab("projects", initialHash, false);
+} else {
+  setActiveTab("home", null, false);
 }
 
-const galleryImages = document.querySelectorAll(
-  ".real-project-grid .project-card img, .stage-shot img"
-);
+const galleryImages = [...document.querySelectorAll(".showcase-card .stage-shot img")];
 
 galleryImages.forEach((img) => {
+  const stageShot = img.closest(".stage-shot");
+
   const setOrientationClass = () => {
-    const stageShot = img.closest(".stage-shot");
+    if (!stageShot) {
+      return;
+    }
+
     if (img.naturalHeight > img.naturalWidth) {
       img.classList.add("is-portrait");
-      if (stageShot) {
-        stageShot.classList.add("is-portrait-frame");
-      }
+      stageShot.classList.add("is-portrait-frame");
     } else {
       img.classList.remove("is-portrait");
-      if (stageShot) {
-        stageShot.classList.remove("is-portrait-frame");
-      }
+      stageShot.classList.remove("is-portrait-frame");
     }
   };
 
@@ -154,11 +202,6 @@ if (galleryImages.length) {
       return [...showcaseCard.querySelectorAll(".stage-shot img")];
     }
 
-    const projectCard = img.closest(".real-project-grid .project-card");
-    if (projectCard) {
-      return [...projectCard.querySelectorAll("img")];
-    }
-
     return [img];
   };
 
@@ -173,6 +216,7 @@ if (galleryImages.length) {
 
     lightboxImage.src = imgSrc;
     lightboxImage.alt = imgAlt;
+
     if (activeGroup.length > 1) {
       lightboxCaption.textContent = `${imgAlt} (${activeIndex + 1}/${activeGroup.length})`;
     } else {

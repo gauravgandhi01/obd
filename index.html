@@ -23,7 +23,7 @@
 
     <header class="site-header" id="top">
       <div class="container header-inner">
-        <a href="#home" class="brand" aria-label="Organized by Design home">
+        <a href="#home" class="brand tab-link" data-tab="home" aria-label="Organized by Design home">
           <span class="brand-line">ORGANIZED</span>
           <span class="brand-line muted">BY DESIGN</span>
         </a>
@@ -42,419 +42,410 @@
 
         <nav class="site-nav" id="primary-nav" aria-label="Primary navigation">
           <ul class="nav-list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#home" class="tab-link" data-tab="home">Home</a></li>
+            <li><a href="#about" class="tab-link" data-tab="about">About</a></li>
+            <li><a href="#services" class="tab-link" data-tab="services">Services</a></li>
             <li class="has-submenu">
-              <a href="#projects">Past Projects</a>
+              <a href="#projects" class="tab-link" data-tab="projects">Projects</a>
               <button
                 class="submenu-toggle"
                 type="button"
                 aria-expanded="false"
                 aria-controls="projects-submenu"
-                aria-label="Open past project subtabs"
+                aria-label="Open project subtabs"
               >
                 +
               </button>
               <ul class="submenu" id="projects-submenu">
-                <li><a href="#before-after">Before/After</a></li>
-                <li><a href="#donation-partners">Donation Partners</a></li>
+                <li>
+                  <a
+                    href="#before-after"
+                    class="tab-link"
+                    data-tab="projects"
+                    data-project-pane="before-after"
+                    >Before/After</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#donation-partners"
+                    class="tab-link"
+                    data-tab="projects"
+                    data-project-pane="donation-partners"
+                    >Donation Partners</a
+                  >
+                </li>
               </ul>
             </li>
-            <li><a href="#faqs">FAQ's</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#testimonials" class="tab-link" data-tab="testimonials">Testimonials</a></li>
+            <li><a href="#faqs" class="tab-link" data-tab="faqs">FAQ's</a></li>
+            <li><a href="#contact" class="tab-link" data-tab="contact">Contact</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main>
-      <section class="hero section" id="home">
+    <main class="tab-main">
+      <section class="section tab-section active" data-tab-panel="home" aria-labelledby="home-title">
         <div class="container hero-grid">
           <div class="hero-copy">
             <p class="eyebrow">Professional Organizing Company</p>
-            <h1>Calm, functional spaces designed for the way you actually live.</h1>
+            <h1 id="home-title">Create calm, organized spaces designed just for you.</h1>
             <p>
-              Organized by Design helps busy households and professionals transform cluttered rooms into
-              intuitive systems that look polished and stay manageable.
+              Organized by Design helps busy people and households transform cluttered rooms and spaces into
+              manageable systems that look polished and accessible. Our goal is not just a nice reveal day,
+              but spaces that still work on busy weekdays, family weekends, and everything in between.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Book a Consultation</a>
-              <a class="btn btn-ghost" href="#services">Explore Services</a>
-            </div>
             <p class="hero-meta">Serving homes, apartments, and small offices.</p>
           </div>
 
           <div class="mosaic" aria-label="Examples of organized spaces">
             <article class="tile span-tall">
-              <img
-                src="https://images.unsplash.com/photo-1649361811423-a55616f7ab11?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                alt="Color-coordinated clothing in an organized closet"
-                loading="lazy"
-              />
+              <img src="pics/closet/Closet-%20After.jpeg" alt="Organized closet" loading="lazy" />
             </article>
             <article class="tile">
-              <img
-                src="https://images.unsplash.com/photo-1614631446501-abcf76949eca?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                alt="Neatly arranged pantry shelves with clear containers"
-                loading="lazy"
-              />
+              <img src="pics/pantry/Pantry%20Side%201%20-%20After.jpeg" alt="Organized pantry" loading="lazy" />
             </article>
             <article class="tile">
-              <img
-                src="https://images.unsplash.com/photo-1577020914435-7ae6b1091ebd?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
-                alt="Woven baskets neatly arranged on shelves"
-                loading="lazy"
-              />
+              <img src="pics/drawer/Drawer%20Kids%20-%20After.jpeg" alt="Organized kids drawer" loading="lazy" />
             </article>
             <article class="tile quote-tile">
-              <p>Creating order in your everyday life.</p>
+              <p>Creating order in your everyday spaces.</p>
             </article>
             <article class="tile span-wide">
-              <img
-                src="https://images.unsplash.com/photo-1514237487632-b60bc844a47d?auto=format&amp;fit=crop&amp;w=1200&amp;q=80"
-                alt="Folded white linens arranged on shelving"
-                loading="lazy"
-              />
+              <img src="pics/desktop/Desktop%20-%20After.jpeg" alt="Organized desktop area" loading="lazy" />
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" aria-labelledby="about-heading" id="about">
+      <section class="section tab-section" data-tab-panel="about" aria-labelledby="about-heading">
         <div class="container split-layout">
           <div>
             <p class="eyebrow">About</p>
-            <h2 id="about-heading">A practical design mindset for every room.</h2>
-            <p class="owner-line"><strong>Owner:</strong> Ruchi Sharma</p>
+            <h2 id="about-heading">Ruchi Sharma</h2>
+            <p class="owner-line">Owner/Operator</p>
             <p>
-              We blend organization strategy with visual simplicity. Every project starts with your routines,
-              then we map out systems, zones, and storage that are easy to maintain and natural to use.
+              Hi! I'm Ruchi Sharma and I approach my organizing with an eye on design (hence the name!). I
+              have a business degree and MBA and worked in a Top 5 management consulting firm for years
+              helping organizations create more efficient and organized systems and processes.
             </p>
             <p>
-              Our goal is not just a nice reveal day. We build setups that still work on busy weekdays, family
-              weekends, and everything in between.
+              Over the years I've created organized spaces for my own household with 3 kids, extended family,
+              and numerous friends. I have always had a knack for organizing whether it's companies or closets.
+            </p>
+            <h3 class="about-subheading">My Approach</h3>
+            <p>
+              I believe a space should not only be organized, but also visually appealing and welcoming. Every
+              project starts with getting to know you and your family, then planning systems, zones, and
+              storage that are easy to maintain and natural to use.
+            </p>
+            <p>
+              I can also help reimagine spaces that fit your lifestyle, like adding a coffee or wine bar, or
+              turning a guest room into an office. The possibilities are endless.
             </p>
           </div>
           <div class="panel">
-            <h3>What sets us apart</h3>
+            <h3>What sets me apart</h3>
             <ul class="checklist">
               <li>Judgment-free collaboration from start to finish</li>
               <li>Design-forward solutions that still feel livable</li>
               <li>Customized systems and labels for long-term success</li>
+              <li>Reuse-first planning and recycling-minded solutions using what you already have</li>
               <li>Optional donation coordination to reduce waste</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="section" id="services" aria-labelledby="services-heading">
+      <section class="section tab-section" data-tab-panel="services" aria-labelledby="services-heading">
         <div class="container">
           <p class="eyebrow">Services</p>
           <h2 id="services-heading">Organizing support tailored to your space.</h2>
 
           <div class="cards">
             <article class="card">
-              <h3>Whole-Home Reset</h3>
-              <p>
-                Comprehensive room-by-room organization for clients ready to create cohesive systems across
-                their home.
-              </p>
-            </article>
-            <article class="card">
               <h3>Kitchen + Pantry</h3>
-              <p>
-                Functional food zones, container planning, and labeling that make cooking and grocery flow
-                smoother.
-              </p>
+              <p>Functional food zones, container planning, and labels to simplify day-to-day flow.</p>
             </article>
             <article class="card">
               <h3>Closets + Wardrobes</h3>
-              <p>
-                Layout planning, category sorting, and outfit-friendly storage that keeps daily routines simple.
-              </p>
+              <p>Category sorting and storage layouts that support faster routines.</p>
             </article>
             <article class="card">
               <h3>Garage + Utility Spaces</h3>
-              <p>
-                Durable storage plans for seasonal items, tools, and household overflow in high-traffic areas.
-              </p>
+              <p>Durable storage plans for seasonal items, tools, and overflow.</p>
             </article>
             <article class="card">
               <h3>Home Office Optimization</h3>
-              <p>
-                Desk and filing systems for focused work, reduced visual clutter, and cleaner digital-to-paper
-                workflows.
-              </p>
+              <p>Desk and filing systems for focused work and lower visual clutter.</p>
             </article>
             <article class="card">
-              <h3>Move-In + Move-Out Organizing</h3>
-              <p>
-                Packing support, thoughtful unpacking, and immediate setup so your new home starts organized.
-              </p>
+              <h3>Move-In Organizing</h3>
+              <p>Unpacking support and immediate setup so your new space starts organized and functional.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="projects" aria-labelledby="projects-heading">
+      <section class="section tab-section" data-tab-panel="projects" aria-labelledby="projects-heading">
         <div class="container">
-          <div class="projects-head">
-            <div>
-              <p class="eyebrow">Past Projects</p>
-              <h2 id="projects-heading">Project highlights.</h2>
+          <p class="eyebrow">Projects</p>
+          <h2 id="projects-heading">Before/after results and community donation options.</h2>
+
+          <div class="project-subtabs" role="tablist" aria-label="Project tabs">
+            <button class="project-tab active" type="button" data-project-tab="before-after" aria-selected="true">
+              Before/After
+            </button>
+            <button class="project-tab" type="button" data-project-tab="donation-partners" aria-selected="false">
+              Donation Partners
+            </button>
+          </div>
+
+          <div class="project-pane active" data-project-panel="before-after">
+            <div class="showcase-stack">
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Closet</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/closet/Closet%20-%20Before.jpeg" alt="Closet before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>Main closet</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/closet/Closet-%20After.jpeg" alt="Closet after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Main closet</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Dining Table</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/table/Dining%20Table%20-%20Before.jpeg" alt="Dining table before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>View 1</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/table/Dining%20Table%20-%20Before%202.jpeg" alt="Dining table before organization second angle" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>View 2</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/table/Dining%20Table%20-%20After.jpeg" alt="Dining table after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Final setup</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Desktop Area</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/desktop/Desktop%20-%20Before.jpeg" alt="Desktop area before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>Overall desk</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/desktop/Desktop%20-%20After.jpeg" alt="Desktop area after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Overall desk</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/desktop/Desktop%20Cabinet%20-%20After%202.jpeg" alt="Desktop cabinet after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Cabinet detail</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/desktop/Desktop%20Drawer%20-%20After%203.jpeg" alt="Desktop drawer after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Drawer detail</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Coffee + Wine Station</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/wine_station/Coffe%20%26%20Wine%20Station%20-%20Before.jpeg" alt="Coffee and wine station before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>Initial state</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="midway">
+                    <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20midway.jpeg" alt="Coffee and wine station midway through organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Midway</span><span>In progress</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20After.jpeg" alt="Coffee and wine station after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Final setup</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Pantry Side 1</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/pantry/Pantry%20Side%201%20-%20Before.jpeg" alt="Pantry side one before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>Side 1</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/pantry/Pantry%20Side%201%20-%20After.jpeg" alt="Pantry side one after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Side 1</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Pantry Side 2</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/pantry/Pantry%20Side%202%20-%20Before.jpeg" alt="Pantry side two before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>Side 2</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/pantry/Pantry%20Side%202%20-%20After.jpeg" alt="Pantry side two after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Side 2</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Office</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/office/Office%20-%20before.JPG" alt="Office before organization first angle" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>View 1</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/office/Office%20-%20before%202.JPG" alt="Office before organization second angle" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>View 2</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/office/Office%20-%20before%203.JPG" alt="Office before organization third angle" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span><span>View 3</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/office/Office%20-%20After.jpg" alt="Office after organization first angle" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>View 1</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/office/Office%20-%20After%202.jpg" alt="Office after organization second angle" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>View 2</span></figcaption>
+                  </figure>
+                </div>
+              </article>
+
+              <article class="showcase-card">
+                <div class="showcase-head"><h3>Drawer Zones</h3></div>
+                <div class="stage-gallery">
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/drawer/Drawer%20-%20After.jpeg" alt="Drawer after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Main drawer</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/drawer/Drawer%20Kids%20-%20After.jpeg" alt="Kids drawer after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span><span>Kids drawer</span></figcaption>
+                  </figure>
+                </div>
+              </article>
             </div>
-            <div class="subtab-pills" role="navigation" aria-label="Past projects subtabs">
-              <a href="#before-after">Before/After</a>
-              <a href="#donation-partners">Donation Partners</a>
+          </div>
+
+          <div class="project-pane" data-project-panel="donation-partners">
+            <p class="projects-note">Donation partnerships help ensure useful items are recirculated responsibly.</p>
+            <div class="partner-grid">
+              <article class="partner-card">
+                <h3>National Center for Children &amp; Families (NCCF), Bethesda, MD</h3>
+                <p>
+                  Supports children and families with practical essentials, including clothing, shoes, and
+                  household items in good condition.
+                </p>
+              </article>
+              <article class="partner-card">
+                <h3>Wider Circle, Silver Spring, MD</h3>
+                <p>
+                  Redistributes furniture and household goods to help local families transition into stable
+                  housing.
+                </p>
+              </article>
+              <article class="partner-card">
+                <h3>Interfaith Clothing Center (ICC), Rockville, MD</h3>
+                <p>
+                  Provides clothing and related essentials for individuals and families through organized
+                  community support services.
+                </p>
+              </article>
+              <article class="partner-card">
+                <h3>Local Habitat ReStore</h3>
+                <p>Accepts select furniture, home goods, and building materials in good condition.</p>
+              </article>
             </div>
           </div>
-          <p class="projects-note">
-            A quick overview of recent project types. Full visual galleries are in the Before/After section
-            directly below.
-          </p>
-
-          <div class="projects-overview">
-            <article class="overview-card">
-              <h3>Pantry Systems</h3>
-              <p>Two-side pantry transformations with structured categories and easier daily access.</p>
-            </article>
-            <article class="overview-card">
-              <h3>Office Reset</h3>
-              <p>Multi-angle cleanup focused on practical work zones and clutter reduction.</p>
-            </article>
-            <article class="overview-card">
-              <h3>Coffee + Wine Station</h3>
-              <p>Step-by-step station refinement from initial setup to final polished layout.</p>
-            </article>
-            <article class="overview-card">
-              <h3>Closet Refresh</h3>
-              <p>A direct transformation designed for clearer categories and faster routines.</p>
-            </article>
-            <article class="overview-card">
-              <h3>Desktop + Drawer Details</h3>
-              <p>Workspace tuning across desk, cabinet, and drawer storage zones.</p>
-            </article>
-            <article class="overview-card">
-              <h3>Dining Table Declutter</h3>
-              <p>Surface reset from multiple pre-organized states to a clean final arrangement.</p>
-            </article>
-          </div>
-
-          <a class="btn btn-ghost projects-cta" href="#before-after">View Full Before/After Gallery</a>
         </div>
       </section>
 
-      <section class="section" id="before-after" aria-labelledby="before-after-heading">
+      <section class="section tab-section" data-tab-panel="testimonials" aria-labelledby="testimonials-heading">
         <div class="container">
-          <p class="eyebrow">Before/After</p>
-          <h2 id="before-after-heading">Real project photo sequences.</h2>
-
-          <div class="showcase-stack">
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Closet</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/closet/Closet%20-%20Before.jpeg" alt="Closet before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>Main closet</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/closet/Closet-%20After.jpeg" alt="Closet after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Main closet</span></figcaption>
-                </figure>
-              </div>
+          <p class="eyebrow">Testimonials</p>
+          <h2 id="testimonials-heading">What clients say</h2>
+          <div class="testimonial-grid">
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                "Ruchi was so helpful to us for planning a new configuration for our basement. We had a flood
+                that prompted the changes, and she was able to come in, survey the space, and provide at least
+                two different options to reorganize our space. We had a basically useless closet in the middle
+                of the basement that broke up the room in an odd way. She suggested we remove it completely and
+                open everything up. She made suggestions for where to add a wet bar, as well as living space
+                and a separate room, all to maximize the space. We took Ruchi's advice and completely changed
+                the look of our basement. Now we have so much more space, openness and organization and are
+                able to entertain there often! We highly recommend Ruchi for your organization and space
+                planning needs!"
+              </p>
+              <p class="testimonial-author">Sona T. | Homeowner</p>
             </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Dining Table</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/table/Dining%20Table%20-%20Before.jpeg" alt="Dining table before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>View 1</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/table/Dining%20Table%20-%20Before%202.jpeg" alt="Dining table before organization second angle" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>View 2</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/table/Dining%20Table%20-%20After.jpeg" alt="Dining table after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Final setup</span></figcaption>
-                </figure>
-              </div>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                "Our office was overwhelming before we started. Now every area has a purpose and we save time
+                every day."
+              </p>
+              <p class="testimonial-author">M.P. | Small Business Owner</p>
             </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Desktop Area</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/desktop/Desktop%20-%20Before.jpeg" alt="Desktop area before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>Overall desk</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/desktop/Desktop%20-%20After.jpeg" alt="Desktop area after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Overall desk</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/desktop/Desktop%20Cabinet%20-%20After%202.jpeg" alt="Desktop cabinet after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Cabinet detail</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/desktop/Desktop%20Drawer%20-%20After%203.jpeg" alt="Desktop drawer after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Drawer detail</span></figcaption>
-                </figure>
-              </div>
-            </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Coffee + Wine Station</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/wine_station/Coffe%20%26%20Wine%20Station%20-%20Before.jpeg" alt="Coffee and wine station before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>Initial state</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="midway">
-                  <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20midway.jpeg" alt="Coffee and wine station midway through organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Midway</span><span>In progress</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20After.jpeg" alt="Coffee and wine station after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Final setup</span></figcaption>
-                </figure>
-              </div>
-            </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Pantry Side 1</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/pantry/Pantry%20Side%201%20-%20Before.jpeg" alt="Pantry side one before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>Side 1</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/pantry/Pantry%20Side%201%20-%20After.jpeg" alt="Pantry side one after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Side 1</span></figcaption>
-                </figure>
-              </div>
-            </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Pantry Side 2</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/pantry/Pantry%20Side%202%20-%20Before.jpeg" alt="Pantry side two before organization" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>Side 2</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/pantry/Pantry%20Side%202%20-%20After.jpeg" alt="Pantry side two after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Side 2</span></figcaption>
-                </figure>
-              </div>
-            </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Office</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/office/Office%20-%20before.JPG" alt="Office before organization first angle" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>View 1</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/office/Office%20-%20before%202.JPG" alt="Office before organization second angle" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>View 2</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="before">
-                  <img src="pics/office/Office%20-%20before%203.JPG" alt="Office before organization third angle" loading="lazy" />
-                  <figcaption><span class="stage-label">Before</span><span>View 3</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/office/Office%20-%20After.jpg" alt="Office after organization first angle" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>View 1</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/office/Office%20-%20After%202.jpg" alt="Office after organization second angle" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>View 2</span></figcaption>
-                </figure>
-              </div>
-            </article>
-
-            <article class="showcase-card">
-              <div class="showcase-head">
-                <h3>Drawer Zones</h3>
-              </div>
-              <div class="stage-gallery">
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/drawer/Drawer%20-%20After.jpeg" alt="Drawer after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Main drawer</span></figcaption>
-                </figure>
-                <figure class="stage-shot" data-stage="after">
-                  <img src="pics/drawer/Drawer%20Kids%20-%20After.jpeg" alt="Kids drawer after organization" loading="lazy" />
-                  <figcaption><span class="stage-label">After</span><span>Kids drawer</span></figcaption>
-                </figure>
-              </div>
+            <article class="testimonial-card">
+              <p class="testimonial-quote">
+                "Professional, efficient, and zero judgment. The before/after difference in our closets was
+                huge."
+              </p>
+              <p class="testimonial-author">K.R. | Returning Client</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="donation-partners" aria-labelledby="partners-heading">
-        <div class="container">
-          <p class="eyebrow">Donation Partners</p>
-          <h2 id="partners-heading">Where usable items can get a second life.</h2>
-
-          <div class="partner-grid">
-            <article class="partner-card">
-              <h3>Local Habitat ReStore</h3>
-              <p>
-                Accepts select furniture, home goods, and building materials in good condition.
-              </p>
-            </article>
-            <article class="partner-card">
-              <h3>Dress for Success</h3>
-              <p>
-                Professional clothing and accessories for career-focused community support programs.
-              </p>
-            </article>
-            <article class="partner-card">
-              <h3>Neighborhood Food Pantry Network</h3>
-              <p>
-                Shelf-stable pantry goods and hygiene products based on current local needs.
-              </p>
-            </article>
-            <article class="partner-card">
-              <h3>Children's Book &amp; Toy Drive</h3>
-              <p>
-                Gently used books, puzzles, and age-appropriate toys for family resource centers.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="faqs" aria-labelledby="faq-heading">
+      <section class="section tab-section" data-tab-panel="faqs" aria-labelledby="faq-heading">
         <div class="container faq-wrap">
           <p class="eyebrow">FAQ's</p>
           <h2 id="faq-heading">Answers to common questions.</h2>
 
           <div class="faq-list">
             <details class="faq-item">
+              <summary>How do I get started with OBD?</summary>
+              <p>
+                After you contact me, I provide a half-hour initial consultation at no charge. During this
+                time, we review your space, discuss goals, share ideas, and go over my approach and fees. I
+                usually do this virtually via FaceTime, Zoom, or phone using your photos and video clips, and
+                if you're nearby, I'm happy to do a home visit.
+              </p>
+            </details>
+
+            <details class="faq-item">
               <summary>How long does a typical organizing session take?</summary>
               <p>
-                Most sessions run between 3-6 hours depending on the space and your goals. During your
-                consultation, we recommend a realistic timeline before any work begins.
+                Most sessions run between 3-6 hours depending on the space and your goals, with a 3-hour
+                minimum per session.
+              </p>
+            </details>
+
+            <details class="faq-item">
+              <summary>How much do you charge?</summary>
+              <p>
+                I mostly charge by the hour, and for some larger spaces I may charge by project. Factors like
+                complexity and travel time are also considered. I typically start at $60/hour, which is lower
+                than many local organizers.
               </p>
             </details>
 
@@ -475,28 +466,27 @@
             </details>
 
             <details class="faq-item">
-              <summary>Do you offer virtual organizing?</summary>
+              <summary>Do I have to be there?</summary>
               <p>
-                Absolutely. Virtual sessions include planning guidance, live organizing support, and custom
-                action checklists.
+                While I prefer clients to make the keep and purge decisions, I can also work solo on many
+                projects. We can discuss what works best during your initial consultation.
               </p>
             </details>
 
             <details class="faq-item">
               <summary>What areas do you serve?</summary>
               <p>
-                In-person services are available in your local region, with virtual support available anywhere.
-                Contact us with your ZIP code for details.
+                I primarily serve the DMV area, including Washington, DC, Maryland, and Northern Virginia.
               </p>
             </details>
           </div>
         </div>
       </section>
 
-      <section class="section section-soft" id="contact" aria-labelledby="contact-heading">
+      <section class="section tab-section" data-tab-panel="contact" aria-labelledby="contact-heading">
         <div class="container contact-grid">
           <div>
-            <p class="eyebrow">Contact Me</p>
+            <p class="eyebrow">Contact</p>
             <h2 id="contact-heading">Let's build a space that works for you.</h2>
             <p>
               Share a few details about your project and preferred timing. We will follow up with next steps
@@ -520,11 +510,10 @@
             <label for="project">Project Type</label>
             <select id="project" name="project" required>
               <option value="">Select one</option>
-              <option value="whole-home">Whole-Home Reset</option>
               <option value="kitchen">Kitchen / Pantry</option>
               <option value="closet">Closet / Wardrobe</option>
               <option value="office">Home Office</option>
-              <option value="moving">Move-In / Move-Out</option>
+              <option value="moving">Move-In Organizing</option>
             </select>
 
             <label for="message">Message</label>
