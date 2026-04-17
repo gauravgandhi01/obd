@@ -1,46 +1,91 @@
-testimonial 2:
-Ruchi transformed our overflowing basement into a functional, organized space. She helped us declutter by removing and donating items we no longer needed, then thoughtfully arranged everything that remained so it’s easy to find and maintain.
+HOME page
 
-We were so impressed with her work that we asked her to tackle our hallway closet, kitchen pantry, and workspace. Somehow, she worked quickly while still creating systems that just make sense—and the entire family noticed the difference right away.
+-Generally, can you make the name (OBD) bigger font and decrease size of header fonts on each page?
 
-We highly recommend Ruchi for any organizing or decluttering project!
+- Move blue line under “Organized” more to the left (or make line longer to fully go under the word)
+- Move “Explore” button below text “Serving homes, apartments, and small offices.”
 
-Mark & Marianna A., Homeowner
-
-
-HOME page:
-
-1) add this logo in pics/logo (should be a dark blue line in between 2 lines)
-
-2) Can you put the stock photos back on the first page (not mine)? This closet one works, and one for a pantry and others? Kind of like what was already there but more of a bright and white schematic?
-
-
-3) Can you  move all the text on the Home page up to the top? Too much empty space
-4) Can you put the "Explore Services" button back on the Home page?
 
 ABOUT Page:
 
-5) Insert space between sections (before "My Approach")
-6) Add "better" to this "I can also help reimagine spaces that BETTER fit your lifestyle..."
-7) Add "area" after "wine bar"
-8) After last sentence add ", and designed specifically for YOU."
+
+-The white box on R has too much white space.
+-Add space after “My Approach”
+
+
+SERVICES Page:
+
+
+- Add another bubble "Redesign" Finding design solutions to solve lifestyle/workflow issues
+
 
 PROJECTS Page:
 
-generally, can you make all the pictures the same size and fit in square spaces? Too much empty space in the "Desktop Area" box
 
-9) Add this text to "Hall Closet" - I removed all food, expired medicines and other items that didn't belong in the hall closet and categorized all like items together using the homeowner's own containers.
+Put the Projects in this order (and align all boxes):
 
-10) For the "dining table" - The homeowner used their dining table for work and homework and not for eating. I removed and categorized all the items and organized them into a kitchen cabinet for easy access and less clutter.
 
-11) For "Pantry" - By reusing the homeowner's many containers, I threw out expired foods, categorized like items and took out items that don't belong in a food pantry/kitchen.
+1)Kitchen Pantry (add “Kitchen”) - and have all 4 pix going across taking up width)
+2) Dining Table bubble next to Desktop Area
+3) Office
+4) Coffee & Wine Bar
+5) Drawers
+ 
+-Replace text for “Kitchen Pantry”:
 
-12) For "office" - I unpacked and organized a homeowner's new office into a highly functional and aesthetically pleasing space. (Also please blur out diplomas)
 
-13) For "Drawers" - I like to use this folding method for adults and kids so you can easily see all the clothes (versus layering).
+For this kitchen pantry, I removed expired food, grouped similar items, and cleared out anything that didn’t belong in the pantry or kitchen. I then repurposed the homeowner’s existing containers to create a more organized, functional, and easily accessible space.
 
-DONATION PARTNERS
 
-Add to the top:
+-Blur out more of the diplomas
 
-14) I am committed to recycling and reusing things as much as possible. In that spirit, here are some of the donation partners I use to give my client's unneeded items a new life, a new purpose.
+
+-For the drawers bubble replace text with this:
+
+
+I use this folding method for both adults’ and kids’ clothing so everything is visible at a glance, instead of being stacked in layers.
+
+
+Coffee + Wine Station:
+
+
+I helped the client transform a previously unused area into a dedicated coffee and wine bar using some old cabinets she had. By relocating all related items to these cabinets-and adding paint, tiles and mirrors-I created a beautiful, functional space for both coffee and wine while freeing up valuable room in the kitchen pantry.
+
+For “Dining Table”
+
+The homeowner and their kids used their dining table for work and homework, and not for eating. I removed and categorized all the items and organized them into a nearby kitchen cabinet workspace for easy access, less clutter and a dining table free for actual dining (pictured to the right)!
+
+-Remove all the text on the bottom right of all the pictures (“Main Closet, Side 1, etc)
+
+-For Donation Partners, replace text with this:
+
+I’m committed to recycling and reusing whenever possible. In that spirit, here are some of the donation partners I work with to help give my clients’ unneeded items a new life and renewed purpose.
+
+-Can you also add a link for each charity? (and change to “A Wider Circle”)
+
+https://nccf-cares.org/#
+https://awidercircle.org/
+https://www.iworksmc.org/in-kind-donations-and-program-needs
+https://habitatmm.org/restore/restore.html
+
+TESTIMONIALS Page
+
+- Have them going across the width instead of down and smaller font and italics
+
+-Add cities “Burtonsville” to Sona’s, “Bethesda” to Mark’s and “Beltsville to Tina’s
+
+-Add this one:
+
+I have worked with Ruchi on several projects in my house including decluttering a massive basement closet filled with years of accumulated household items. We also had her come in and declutter and redesign my daughter’s closet and desk area. Not only was it much neater and organized, but it was very modern and perfect for our teenage daughter…she was thrilled! Highly recommend Ruchi!
+
+Tina V, Beltsville
+
+-Remove fake testimonials
+
+FAQ’s
+
+-Add one more:
+
+Do you have contractors that can help with redesigns/remodels?
+
+Yes, I work with many contractors who can come in and complete projects that I design for you (like the coffee/wine station). 
