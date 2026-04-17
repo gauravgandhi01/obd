@@ -124,30 +124,6 @@ if (validTabs.has(initialHash)) {
 
 const galleryImages = [...document.querySelectorAll(".showcase-card .stage-shot img")];
 
-galleryImages.forEach((img) => {
-  const stageShot = img.closest(".stage-shot");
-
-  const setOrientationClass = () => {
-    if (!stageShot) {
-      return;
-    }
-
-    if (img.naturalHeight > img.naturalWidth) {
-      img.classList.add("is-portrait");
-      stageShot.classList.add("is-portrait-frame");
-    } else {
-      img.classList.remove("is-portrait");
-      stageShot.classList.remove("is-portrait-frame");
-    }
-  };
-
-  if (img.complete) {
-    setOrientationClass();
-  } else {
-    img.addEventListener("load", setOrientationClass, { once: true });
-  }
-});
-
 if (galleryImages.length) {
   const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
