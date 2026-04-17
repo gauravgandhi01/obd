@@ -421,12 +421,31 @@ p {
   margin-top: 1.9rem;
 }
 
+.about-aside {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.about-headshot {
+  margin: 0;
+  overflow: hidden;
+}
+
+.about-headshot img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
 .owner-line {
   margin: 0.5rem 0 0.8rem;
   color: #244675;
 }
 
 .panel,
+.about-headshot,
 .card,
 .showcase-card,
 .partner-card,
