@@ -573,6 +573,11 @@ p {
   grid-column: 1 / -1;
 }
 
+.showcase-card-drawers {
+  width: min(100%, 560px);
+  justify-self: start;
+}
+
 .showcase-card {
   margin: 0;
   padding: 1rem;
@@ -601,7 +606,7 @@ p {
 }
 
 .stage-gallery-drawers {
-  grid-template-columns: repeat(auto-fit, minmax(170px, 240px));
+  grid-template-columns: repeat(2, minmax(170px, 240px));
   justify-content: start;
 }
 
@@ -936,6 +941,10 @@ p {
 
   .showcase-card-full {
     grid-column: auto;
+  }
+
+  .showcase-card-drawers {
+    max-width: none;
   }
 
   .stage-gallery-kitchen {
