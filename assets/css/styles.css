@@ -94,6 +94,11 @@ p {
   padding: clamp(2.8rem, 5vw, 4.8rem) 0;
 }
 
+.tab-section {
+  display: none;
+  padding-top: clamp(1.5rem, 2.8vw, 2.4rem);
+}
+
 .eyebrow {
   display: inline-block;
   margin-bottom: 0.8rem;
@@ -143,7 +148,7 @@ p {
   content: "";
   position: absolute;
   left: 3%;
-  right: 0%;
+  right: 8.5%;
   top: 39%;
   height: 2px;
   background: #184886;
@@ -275,10 +280,6 @@ p {
   padding-bottom: 1rem;
 }
 
-.tab-section {
-  display: none;
-}
-
 .tab-section.active {
   display: block;
   animation: tab-fade 220ms ease;
@@ -314,10 +315,6 @@ p {
 .hero-copy p {
   color: #2b4670;
   max-width: 56ch;
-}
-
-.tab-section[data-tab-panel="home"] {
-  padding-top: clamp(1.5rem, 2.8vw, 2.4rem);
 }
 
 .hero-actions {
@@ -449,6 +446,49 @@ p {
   color: #244675;
 }
 
+.section-intro {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+  gap: clamp(1rem, 3vw, 2.2rem);
+  align-items: end;
+  padding: clamp(1.05rem, 2.5vw, 1.55rem);
+  border: 1px solid rgba(170, 205, 247, 0.82);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(232, 244, 255, 0.92)),
+    radial-gradient(circle at 92% 18%, rgba(111, 181, 255, 0.3), transparent 26%);
+  box-shadow: var(--shadow);
+}
+
+.section-intro::after {
+  content: "";
+  position: absolute;
+  right: -42px;
+  top: -58px;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(44, 125, 226, 0.18);
+  border-radius: 34px;
+  transform: rotate(14deg);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.section-intro > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-intro .eyebrow {
+  margin-bottom: 0.55rem;
+}
+
+.section-intro > p {
+  color: #2d4a74;
+  max-width: 42ch;
+}
+
 .panel,
 .about-headshot,
 .card,
@@ -500,22 +540,43 @@ p {
 }
 
 .cards {
-  margin-top: 1.25rem;
+  margin-top: 1rem;
   display: grid;
-  gap: 0.9rem;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.78rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .card {
-  padding: 1.15rem;
-  min-height: 188px;
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+  min-height: 198px;
+  aspect-ratio: 1 / 0.86;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border-radius: 18px;
+  background:
+    linear-gradient(150deg, rgba(255, 255, 255, 0.98), rgba(237, 246, 255, 0.94)),
+    radial-gradient(circle at 82% 12%, rgba(111, 181, 255, 0.24), transparent 30%);
+}
+
+.card::before {
+  content: "";
+  width: 2.15rem;
+  height: 0.28rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-deep), var(--accent));
+  order: -1;
+  margin-bottom: 1.1rem;
 }
 
 .card h3 {
-  margin-bottom: 0.56rem;
+  margin-bottom: 0.5rem;
 }
 
 .card p {
+  margin-top: auto;
   color: #2d4a74;
 }
 
@@ -581,10 +642,25 @@ p {
 .showcase-card {
   margin: 0;
   padding: 1rem;
+  overflow: hidden;
 }
 
 .showcase-head {
-  margin-bottom: 0.75rem;
+  margin: -1rem -1rem 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(199, 219, 244, 0.82);
+  background:
+    linear-gradient(135deg, rgba(247, 251, 255, 0.98), rgba(226, 241, 255, 0.8)),
+    radial-gradient(circle at 100% 0%, rgba(111, 181, 255, 0.22), transparent 32%);
+}
+
+.showcase-card-aligned {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.showcase-card-aligned .showcase-head {
+  min-height: 11.7rem;
 }
 
 .project-description {
@@ -596,7 +672,7 @@ p {
 
 .stage-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.72rem;
   align-items: start;
 }
@@ -612,7 +688,7 @@ p {
 
 .stage-shot {
   margin: 0;
-  border-radius: var(--radius-sm);
+  border-radius: 14px;
   border: 1px solid #c7dbf4;
   overflow: hidden;
   background: #edf5ff;
@@ -624,6 +700,12 @@ p {
   width: 100%;
   aspect-ratio: 1 / 1;
   height: auto;
+  transition: transform 0.24s ease, filter 0.24s ease;
+}
+
+.stage-shot:hover img {
+  filter: saturate(1.06);
+  transform: scale(1.018);
 }
 
 .stage-shot figcaption {
@@ -947,6 +1029,10 @@ p {
     max-width: none;
   }
 
+  .showcase-card-aligned .showcase-head {
+    min-height: auto;
+  }
+
   .stage-gallery-kitchen {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1005,6 +1091,20 @@ p {
   .partner-grid,
   .testimonial-grid {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    aspect-ratio: auto;
+  }
+
+  .section-intro {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .section-intro::after {
+    right: -88px;
+    top: -82px;
   }
 
   .span-tall,
