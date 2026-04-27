@@ -462,19 +462,6 @@ p {
   box-shadow: var(--shadow);
 }
 
-.section-intro::after {
-  content: "";
-  position: absolute;
-  right: -42px;
-  top: -58px;
-  width: 210px;
-  height: 210px;
-  border: 1px solid rgba(44, 125, 226, 0.18);
-  border-radius: 34px;
-  transform: rotate(14deg);
-  background: rgba(255, 255, 255, 0.34);
-}
-
 .section-intro > * {
   position: relative;
   z-index: 1;
@@ -1100,11 +1087,6 @@ p {
   .section-intro {
     grid-template-columns: 1fr;
     align-items: start;
-  }
-
-  .section-intro::after {
-    right: -88px;
-    top: -82px;
   }
 
   .span-tall,
