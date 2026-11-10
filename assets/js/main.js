@@ -122,6 +122,70 @@ if (validTabs.has(initialHash)) {
   setActiveTab("home", null, false);
 }
 
+document.querySelectorAll("[data-comparison]").forEach((comparison) => {
+  const before = comparison.querySelector('[data-stage="before"]');
+  const after = comparison.querySelector('[data-stage="after"]');
+  if (!before || !after) {
+    return;
+  }
+
+  const frame = document.createElement("div");
+  frame.className = "comparison-frame";
+
+  const range = document.createElement("input");
+  range.type = "range";
+  range.className = "comparison-range";
+  range.min = "0";
+  range.max = "100";
+  range.step = "1";
+  range.value = "50";
+  range.setAttribute("aria-label", `${comparison.dataset.comparison}: before and after comparison`);
+
+  const divider = document.createElement("span");
+  divider.className = "comparison-divider";
+  divider.setAttribute("aria-hidden", "true");
+  const handle = document.createElement("span");
+  handle.className = "comparison-handle";
+  handle.textContent = "‹ ›";
+  divider.append(handle);
+
+  frame.append(before, after, range, divider);
+  ["Before", "After"].forEach((stage) => {
+    const label = document.createElement("span");
+    label.className = `comparison-label comparison-label-${stage.toLowerCase()}`;
+    label.textContent = stage;
+    label.setAttribute("aria-hidden", "true");
+    frame.append(label);
+  });
+
+  const controls = document.createElement("div");
+  controls.className = "comparison-controls";
+  const hint = document.createElement("p");
+  hint.className = "comparison-hint";
+  hint.textContent = "Drag the handle to compare.";
+  controls.append(hint);
+
+  ["before", "after"].forEach((stage) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "comparison-view";
+    button.dataset.viewStage = stage;
+    button.textContent = `View ${stage}`;
+    button.setAttribute("aria-label", `${comparison.dataset.comparison}: view full ${stage} photo`);
+    controls.append(button);
+  });
+
+  const updateComparison = () => {
+    const value = Number(range.value);
+    frame.style.setProperty("--comparison-position", `${value}%`);
+    range.setAttribute("aria-valuetext", `${value}% before, ${100 - value}% after`);
+  };
+  range.addEventListener("input", updateComparison);
+  updateComparison();
+  comparison.append(frame, controls);
+  comparison.classList.add("is-ready");
+});
+
 const galleryImages = [...document.querySelectorAll(".showcase-card .stage-shot img")];
 
 if (galleryImages.length) {
@@ -192,6 +256,7 @@ if (galleryImages.length) {
 
     lightboxImage.src = imgSrc;
     lightboxImage.alt = imgAlt;
+    lightboxImage.dataset.stage = currentImg.closest(".stage-shot").dataset.stage;
 
     if (activeGroup.length > 1) {
       lightboxCaption.textContent = `${imgAlt} (${activeIndex + 1}/${activeGroup.length})`;
@@ -213,8 +278,8 @@ if (galleryImages.length) {
     renderLightboxImage();
   };
 
-  const openLightbox = (img) => {
-    activeImage = img;
+  const openLightbox = (img, trigger = img) => {
+    activeImage = trigger;
     activeGroup = getImageGroup(img);
     activeIndex = Math.max(activeGroup.indexOf(img), 0);
     renderLightboxImage();
@@ -231,6 +296,7 @@ if (galleryImages.length) {
     document.body.classList.remove("lightbox-open");
     lightboxImage.src = "";
     lightboxImage.alt = "";
+    delete lightboxImage.dataset.stage;
     lightboxCaption.textContent = "";
     activeGroup = [];
     activeIndex = 0;
@@ -244,6 +310,10 @@ if (galleryImages.length) {
   };
 
   galleryImages.forEach((img) => {
+    if (img.closest(".photo-comparison.is-ready")) {
+      return;
+    }
+
     img.classList.add("expandable-image");
     img.setAttribute("tabindex", "0");
     img.setAttribute("role", "button");
@@ -255,6 +325,14 @@ if (galleryImages.length) {
         event.preventDefault();
         openLightbox(img);
       }
+    });
+  });
+
+  document.querySelectorAll(".comparison-view").forEach((button) => {
+    button.addEventListener("click", () => {
+      const comparison = button.closest(".photo-comparison");
+      const img = comparison.querySelector(`[data-stage="${button.dataset.viewStage}"] img`);
+      openLightbox(img, button);
     });
   });
 
