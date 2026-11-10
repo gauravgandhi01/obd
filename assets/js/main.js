@@ -124,6 +124,7 @@ if (validTabs.has(initialHash)) {
 
 document.querySelectorAll("[data-comparison]").forEach((comparison) => {
   const before = comparison.querySelector('[data-stage="before"]');
+  const midway = comparison.querySelector('[data-stage="midway"]');
   const after = comparison.querySelector('[data-stage="after"]');
   if (!before || !after) {
     return;
@@ -132,6 +133,17 @@ document.querySelectorAll("[data-comparison]").forEach((comparison) => {
   const frame = document.createElement("div");
   frame.className = "comparison-frame";
 
+  const stages = midway ? ["before", "midway", "after"] : ["before", "after"];
+  frame.append(before);
+  if (midway) {
+    frame.append(midway);
+  }
+  frame.append(after);
+
+  if (midway) {
+    comparison.classList.add("photo-comparison-three-stage");
+  }
+
   const range = document.createElement("input");
   range.type = "range";
   range.className = "comparison-range";
@@ -139,7 +151,8 @@ document.querySelectorAll("[data-comparison]").forEach((comparison) => {
   range.max = "100";
   range.step = "1";
   range.value = "50";
-  range.setAttribute("aria-label", `${comparison.dataset.comparison}: before and after comparison`);
+  const description = midway ? "before, midway, and after comparison" : "before and after comparison";
+  range.setAttribute("aria-label", `${comparison.dataset.comparison}: ${description}`);
 
   const divider = document.createElement("span");
   divider.className = "comparison-divider";
@@ -148,41 +161,40 @@ document.querySelectorAll("[data-comparison]").forEach((comparison) => {
   handle.className = "comparison-handle";
   handle.textContent = "‹ ›";
   divider.append(handle);
-
-  frame.append(before, after, range, divider);
-  ["Before", "After"].forEach((stage) => {
-    const label = document.createElement("span");
-    label.className = `comparison-label comparison-label-${stage.toLowerCase()}`;
-    label.textContent = stage;
-    label.setAttribute("aria-hidden", "true");
-    frame.append(label);
-  });
-
-  const controls = document.createElement("div");
-  controls.className = "comparison-controls";
-  const hint = document.createElement("p");
-  hint.className = "comparison-hint";
-  hint.textContent = "Drag the handle to compare.";
-  controls.append(hint);
-
-  ["before", "after"].forEach((stage) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = "comparison-view";
-    button.dataset.viewStage = stage;
-    button.textContent = `View ${stage}`;
-    button.setAttribute("aria-label", `${comparison.dataset.comparison}: view full ${stage} photo`);
-    controls.append(button);
-  });
+  frame.append(range, divider);
 
   const updateComparison = () => {
     const value = Number(range.value);
     frame.style.setProperty("--comparison-position", `${value}%`);
-    range.setAttribute("aria-valuetext", `${value}% before, ${100 - value}% after`);
+    if (midway) {
+      // Scrub through the three complete photos with a single continuous handle.
+      frame.style.setProperty("--comparison-midway-opacity", Math.min(value / 50, 1));
+      frame.style.setProperty("--comparison-after-opacity", Math.max((value - 50) / 50, 0));
+      const progress = value <= 50 ? value * 2 : (value - 50) * 2;
+      const from = value <= 50 ? "Before" : "Midway";
+      const to = value <= 50 ? "Midway" : "After";
+      range.setAttribute("aria-valuetext", `${from} ${100 - progress}%, ${to} ${progress}%`);
+    } else {
+      range.setAttribute("aria-valuetext", `${value}% before, ${100 - value}% after`);
+    }
   };
   range.addEventListener("input", updateComparison);
   updateComparison();
-  comparison.append(frame, controls);
+  const actions = document.createElement("div");
+  actions.className = "comparison-actions";
+
+  stages.forEach((stage) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "comparison-label comparison-view";
+    button.dataset.viewStage = stage;
+    button.textContent = stage[0].toUpperCase() + stage.slice(1);
+    button.setAttribute("aria-label", `${comparison.dataset.comparison}: view full ${stage} photo`);
+    actions.append(button);
+  });
+  frame.append(actions);
+
+  comparison.append(frame);
   comparison.classList.add("is-ready");
 });
 
