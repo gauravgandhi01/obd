@@ -46,38 +46,8 @@
             <li><a href="#home" class="tab-link" data-tab="home">Home</a></li>
             <li><a href="#about" class="tab-link" data-tab="about">About</a></li>
             <li><a href="#services" class="tab-link" data-tab="services">Services</a></li>
-            <li class="has-submenu">
-              <a href="#projects" class="tab-link" data-tab="projects">Projects</a>
-              <button
-                class="submenu-toggle"
-                type="button"
-                aria-expanded="false"
-                aria-controls="projects-submenu"
-                aria-label="Open project subtabs"
-              >
-                +
-              </button>
-              <ul class="submenu" id="projects-submenu">
-                <li>
-                  <a
-                    href="#before-after"
-                    class="tab-link"
-                    data-tab="projects"
-                    data-project-pane="before-after"
-                    >Before/After</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#donation-partners"
-                    class="tab-link"
-                    data-tab="projects"
-                    data-project-pane="donation-partners"
-                    >Donation Partners</a
-                  >
-                </li>
-              </ul>
-            </li>
+            <li><a href="#before-after" class="tab-link" data-tab="before-after">Before/After</a></li>
+            <li><a href="#donation-partners" class="tab-link" data-tab="donation-partners">Donation Partners</a></li>
             <li><a href="#testimonials" class="tab-link" data-tab="testimonials">Testimonials</a></li>
             <li><a href="#faqs" class="tab-link" data-tab="faqs">FAQ's</a></li>
             <li><a href="#contact" class="tab-link" data-tab="contact">Contact</a></li>
@@ -231,12 +201,12 @@
         </div>
       </section>
 
-      <section class="section tab-section" data-tab-panel="projects" aria-labelledby="projects-heading">
+      <section class="section tab-section" data-tab-panel="before-after" aria-labelledby="before-after-heading">
         <div class="container">
-          <div class="section-intro section-intro-projects">
+          <div class="section-intro">
             <div>
-              <p class="eyebrow">Projects</p>
-              <h2 id="projects-heading">Before/after results and community donation options.</h2>
+              <p class="eyebrow">Before/After</p>
+              <h2 id="before-after-heading">Before &amp; after results.</h2>
             </div>
             <p>
               See how cluttered spaces become easier to use, easier to maintain, and better suited to daily
@@ -244,302 +214,295 @@
             </p>
           </div>
 
-          <div class="project-subtabs" role="tablist" aria-label="Project tabs">
-            <button class="project-tab active" type="button" data-project-tab="before-after" aria-selected="true">
-              Before/After
-            </button>
-            <button class="project-tab" type="button" data-project-tab="donation-partners" aria-selected="false">
-              Donation Partners
-            </button>
-          </div>
-
-          <div class="project-pane active" data-project-panel="before-after">
-            <div class="showcase-stack">
-              <article class="showcase-card showcase-card-full">
-                <div class="showcase-head">
-                  <h3>Kitchen Pantry</h3>
-                  <p class="project-description">
-                    For this kitchen pantry, I removed expired food, grouped similar items, and cleared out
-                    anything that did not belong in the pantry or kitchen. I then repurposed the homeowner's
-                    existing containers to create a more organized, functional, and easily accessible space.
-                  </p>
-                </div>
-                <div class="stage-gallery stage-gallery-comparisons">
-                  <div class="photo-comparison" data-comparison="Kitchen pantry, side one">
-                    <figure class="stage-shot" data-stage="before">
-                      <img src="pics/pantry/Pantry%20Side%201%20-%20Before.jpeg" alt="Kitchen pantry before organization side one" loading="lazy" />
-                      <figcaption><span class="stage-label">Before</span></figcaption>
-                    </figure>
-                    <figure class="stage-shot" data-stage="after">
-                      <img src="pics/pantry/Pantry%20Side%201%20-%20After.jpeg" alt="Kitchen pantry after organization side one" loading="lazy" />
-                      <figcaption><span class="stage-label">After</span></figcaption>
-                    </figure>
-                  </div>
-                  <div class="photo-comparison" data-comparison="Kitchen pantry, side two">
-                    <figure class="stage-shot" data-stage="before">
-                      <img src="pics/pantry/Pantry%20Side%202%20-%20Before.jpeg" alt="Kitchen pantry before organization side two" loading="lazy" />
-                      <figcaption><span class="stage-label">Before</span></figcaption>
-                    </figure>
-                    <figure class="stage-shot" data-stage="after">
-                      <img src="pics/pantry/Pantry%20Side%202%20-%20After.jpeg" alt="Kitchen pantry after organization side two" loading="lazy" />
-                      <figcaption><span class="stage-label">After</span></figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </article>
-
-              <article class="showcase-card showcase-card-full">
-                <div class="showcase-head">
-                  <h3>Wardrobe Closet</h3>
-                  <p class="project-description">
-                    Clothing grouped on the rail, bags gathered on the shelves, and a clearer floor make
-                    this wardrobe easier to use. Two views show the difference in the hanging area and
-                    side shelves.
-                  </p>
-                </div>
-                <div class="stage-gallery stage-gallery-wardrobe stage-gallery-portrait">
-                  <div class="photo-comparison photo-comparison-wardrobe-hanging" data-comparison="Wardrobe hanging area">
-                    <figure class="stage-shot" data-stage="before">
-                      <img src="pics/wardrobe/wardrobe-before.jpg" alt="Wardrobe hanging area before organization, with clothing and bags crowding the floor" width="1200" height="1600" loading="lazy" decoding="async" />
-                      <figcaption><span class="stage-label">Before</span></figcaption>
-                    </figure>
-                    <figure class="stage-shot" data-stage="after">
-                      <img src="pics/wardrobe/wardrobe-after.jpg" alt="Wardrobe hanging area after organization, with grouped clothing and a clear floor" width="1200" height="900" loading="lazy" decoding="async" />
-                      <figcaption><span class="stage-label">After</span></figcaption>
-                    </figure>
-                  </div>
-                  <div class="photo-comparison" data-comparison="Wardrobe side shelves">
-                    <figure class="stage-shot" data-stage="before">
-                      <img src="pics/wardrobe/wardrobe-shelves-before.jpg" alt="Wardrobe side shelves before organization, with bags and accessories piled together" width="1200" height="1600" loading="lazy" decoding="async" />
-                      <figcaption><span class="stage-label">Before</span></figcaption>
-                    </figure>
-                    <figure class="stage-shot" data-stage="after">
-                      <img src="pics/wardrobe/wardrobe-shelves-after.jpg" alt="Wardrobe side shelves after organization, with bags and accessories separated on shelves" width="1200" height="1600" loading="lazy" decoding="async" />
-                      <figcaption><span class="stage-label">After</span></figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </article>
-
-              <article class="showcase-card showcase-card-aligned">
-                <div class="showcase-head">
-                  <h3>Desktop Area</h3>
-                  <p class="project-description">
-                    I decluttered, organized and integrated all the items from the dining table area and
-                    created a highly functional workspace for the homeowner and their kids for homework and
-                    bill management.
-                  </p>
-                </div>
-                <div class="stage-gallery stage-gallery-with-comparison">
-                  <div class="photo-comparison photo-comparison-landscape" data-comparison="Desktop workspace">
-                    <figure class="stage-shot" data-stage="before">
-                      <img src="pics/desktop/Desktop%20-%20Before.jpeg" alt="Desktop area before organization" loading="lazy" />
-                      <figcaption><span class="stage-label">Before</span></figcaption>
-                    </figure>
-                    <figure class="stage-shot" data-stage="after">
-                      <img src="pics/desktop/Desktop%20-%20After.jpeg" alt="Desktop area after organization" loading="lazy" />
-                      <figcaption><span class="stage-label">After</span></figcaption>
-                    </figure>
-                  </div>
-                  <figure class="stage-shot" data-stage="after">
-                    <img src="pics/desktop/Desktop%20Cabinet%20-%20After%202.jpeg" alt="Desktop cabinet after organization" loading="lazy" />
-                    <figcaption><span class="stage-label">After</span></figcaption>
+          <div class="showcase-stack">
+            <article class="showcase-card showcase-card-full">
+              <div class="showcase-head">
+                <h3>Kitchen Pantry</h3>
+                <p class="project-description">
+                  For this kitchen pantry, I removed expired food, grouped similar items, and cleared out
+                  anything that did not belong in the pantry or kitchen. I then repurposed the homeowner's
+                  existing containers to create a more organized, functional, and easily accessible space.
+                </p>
+              </div>
+              <div class="stage-gallery stage-gallery-comparisons">
+                <div class="photo-comparison" data-comparison="Kitchen pantry, side one">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/pantry/Pantry%20Side%201%20-%20Before.jpeg" alt="Kitchen pantry before organization side one" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
                   </figure>
                   <figure class="stage-shot" data-stage="after">
-                    <img src="pics/desktop/Desktop%20Drawer%20-%20After%203.jpeg" alt="Desktop drawer after organization" loading="lazy" />
+                    <img src="pics/pantry/Pantry%20Side%201%20-%20After.jpeg" alt="Kitchen pantry after organization side one" loading="lazy" />
                     <figcaption><span class="stage-label">After</span></figcaption>
                   </figure>
                 </div>
-              </article>
-
-              <article class="showcase-card">
-                <div class="showcase-head">
-                  <h3>Medicine Closet</h3>
-                  <p class="project-description">
-                    Clear bins bring medicines, first-aid supplies, and everyday essentials together,
-                    keeping each shelf easier to see and access.
-                  </p>
+                <div class="photo-comparison" data-comparison="Kitchen pantry, side two">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/pantry/Pantry%20Side%202%20-%20Before.jpeg" alt="Kitchen pantry before organization side two" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/pantry/Pantry%20Side%202%20-%20After.jpeg" alt="Kitchen pantry after organization side two" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span></figcaption>
+                  </figure>
                 </div>
-                <div class="stage-gallery stage-gallery-single-comparison">
-                  <div class="photo-comparison" data-comparison="Medicine closet">
+              </div>
+            </article>
+
+            <article class="showcase-card showcase-card-full">
+              <div class="showcase-head">
+                <h3>Wardrobe Closet</h3>
+                <p class="project-description">
+                  Clothing grouped on the rail, bags gathered on the shelves, and a clearer floor make
+                  this wardrobe easier to use. Two views show the difference in the hanging area and
+                  side shelves.
+                </p>
+              </div>
+              <div class="stage-gallery stage-gallery-wardrobe stage-gallery-portrait">
+                <div class="photo-comparison photo-comparison-wardrobe-hanging" data-comparison="Wardrobe hanging area">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/wardrobe/wardrobe-before.jpg" alt="Wardrobe hanging area before organization, with clothing and bags crowding the floor" width="1200" height="1600" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/wardrobe/wardrobe-after.jpg" alt="Wardrobe hanging area after organization, with grouped clothing and a clear floor" width="1200" height="900" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">After</span></figcaption>
+                  </figure>
+                </div>
+                <div class="photo-comparison" data-comparison="Wardrobe side shelves">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/wardrobe/wardrobe-shelves-before.jpg" alt="Wardrobe side shelves before organization, with bags and accessories piled together" width="1200" height="1600" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/wardrobe/wardrobe-shelves-after.jpg" alt="Wardrobe side shelves after organization, with bags and accessories separated on shelves" width="1200" height="1600" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">After</span></figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <article class="showcase-card showcase-card-aligned">
+              <div class="showcase-head">
+                <h3>Desktop Area</h3>
+                <p class="project-description">
+                  I decluttered, organized and integrated all the items from the dining table area and
+                  created a highly functional workspace for the homeowner and their kids for homework and
+                  bill management.
+                </p>
+              </div>
+              <div class="stage-gallery stage-gallery-with-comparison">
+                <div class="photo-comparison photo-comparison-landscape" data-comparison="Desktop workspace">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/desktop/Desktop%20-%20Before.jpeg" alt="Desktop area before organization" loading="lazy" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/desktop/Desktop%20-%20After.jpeg" alt="Desktop area after organization" loading="lazy" />
+                    <figcaption><span class="stage-label">After</span></figcaption>
+                  </figure>
+                </div>
+                <figure class="stage-shot" data-stage="after">
+                  <img src="pics/desktop/Desktop%20Cabinet%20-%20After%202.jpeg" alt="Desktop cabinet after organization" loading="lazy" />
+                  <figcaption><span class="stage-label">After</span></figcaption>
+                </figure>
+                <figure class="stage-shot" data-stage="after">
+                  <img src="pics/desktop/Desktop%20Drawer%20-%20After%203.jpeg" alt="Desktop drawer after organization" loading="lazy" />
+                  <figcaption><span class="stage-label">After</span></figcaption>
+                </figure>
+              </div>
+            </article>
+
+            <article class="showcase-card">
+              <div class="showcase-head">
+                <h3>Medicine Closet</h3>
+                <p class="project-description">
+                  Clear bins bring medicines, first-aid supplies, and everyday essentials together,
+                  keeping each shelf easier to see and access.
+                </p>
+              </div>
+              <div class="stage-gallery stage-gallery-single-comparison">
+                <div class="photo-comparison" data-comparison="Medicine closet">
+                  <figure class="stage-shot" data-stage="before">
+                    <img src="pics/medicine/medicine-closet-before.jpg" alt="Medicine closet before organization, with crowded shelves and supplies stacked on the floor" width="1200" height="1600" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">Before</span></figcaption>
+                  </figure>
+                  <figure class="stage-shot" data-stage="after">
+                    <img src="pics/medicine/medicine-closet-after.jpg" alt="Medicine closet after organization, with supplies grouped in clear bins on open shelves" width="1200" height="1600" loading="lazy" decoding="async" />
+                    <figcaption><span class="stage-label">After</span></figcaption>
+                  </figure>
+                </div>
+              </div>
+            </article>
+
+            <div class="showcase-columns">
+              <div class="showcase-column">
+                <article class="showcase-card showcase-card-aligned">
+                  <div class="showcase-head">
+                    <h3>Dining Table</h3>
+                    <p class="project-description">
+                      My client's dining table had become a dumping ground for work and homework supplies
+                      &mdash; so I cleared it all out, sorted everything, and created a dedicated workspace in a
+                      nearby kitchen cabinet (pictured to the right), giving the family back their table for
+                      actual meals!
+                    </p>
+                  </div>
+                  <div class="stage-gallery">
                     <figure class="stage-shot" data-stage="before">
-                      <img src="pics/medicine/medicine-closet-before.jpg" alt="Medicine closet before organization, with crowded shelves and supplies stacked on the floor" width="1200" height="1600" loading="lazy" decoding="async" />
+                      <img src="pics/table/Dining%20Table%20-%20Before.jpeg" alt="Dining table before organization" loading="lazy" />
+                      <figcaption><span class="stage-label">Before</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="before">
+                      <img src="pics/table/Dining%20Table%20-%20Before%202.jpeg" alt="Dining table before organization second angle" loading="lazy" />
                       <figcaption><span class="stage-label">Before</span></figcaption>
                     </figure>
                     <figure class="stage-shot" data-stage="after">
-                      <img src="pics/medicine/medicine-closet-after.jpg" alt="Medicine closet after organization, with supplies grouped in clear bins on open shelves" width="1200" height="1600" loading="lazy" decoding="async" />
+                      <img src="pics/table/Dining%20Table%20-%20After.jpeg" alt="Dining table after organization" loading="lazy" />
                       <figcaption><span class="stage-label">After</span></figcaption>
                     </figure>
                   </div>
-                </div>
-              </article>
+                </article>
 
-              <div class="showcase-columns">
-                <div class="showcase-column">
-                  <article class="showcase-card showcase-card-aligned">
-                    <div class="showcase-head">
-                      <h3>Dining Table</h3>
-                      <p class="project-description">
-                        My client's dining table had become a dumping ground for work and homework supplies
-                        &mdash; so I cleared it all out, sorted everything, and created a dedicated workspace in a
-                        nearby kitchen cabinet (pictured to the right), giving the family back their table for
-                        actual meals!
-                      </p>
-                    </div>
-                    <div class="stage-gallery">
+                <article class="showcase-card">
+                  <div class="showcase-head">
+                    <h3>Coffee &amp; Wine Bar</h3>
+                    <p class="project-description">
+                      I helped the client transform a previously unused area into a dedicated coffee and wine bar
+                      using some old cabinets she had. By relocating all related items to these cabinets-and
+                      adding paint, tiles and mirrors-I created a beautiful, functional space for both coffee and
+                      wine while freeing up valuable room in the kitchen pantry.
+                    </p>
+                  </div>
+                  <div class="stage-gallery stage-gallery-single-comparison">
+                    <div class="photo-comparison" data-comparison="Coffee and wine bar">
                       <figure class="stage-shot" data-stage="before">
-                        <img src="pics/table/Dining%20Table%20-%20Before.jpeg" alt="Dining table before organization" loading="lazy" />
+                        <img src="pics/wine_station/Coffe%20%26%20Wine%20Station%20-%20Before.jpeg" alt="Coffee and wine station before organization" loading="lazy" />
                         <figcaption><span class="stage-label">Before</span></figcaption>
                       </figure>
-                      <figure class="stage-shot" data-stage="before">
-                        <img src="pics/table/Dining%20Table%20-%20Before%202.jpeg" alt="Dining table before organization second angle" loading="lazy" />
-                        <figcaption><span class="stage-label">Before</span></figcaption>
+                      <figure class="stage-shot" data-stage="midway">
+                        <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20midway.jpeg" alt="Coffee and wine station midway through organization" loading="lazy" />
+                        <figcaption><span class="stage-label">Midway</span></figcaption>
                       </figure>
                       <figure class="stage-shot" data-stage="after">
-                        <img src="pics/table/Dining%20Table%20-%20After.jpeg" alt="Dining table after organization" loading="lazy" />
+                        <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20After.jpeg" alt="Coffee and wine station after organization" loading="lazy" />
                         <figcaption><span class="stage-label">After</span></figcaption>
                       </figure>
                     </div>
-                  </article>
+                  </div>
+                </article>
+              </div>
 
-                  <article class="showcase-card">
-                    <div class="showcase-head">
-                      <h3>Coffee &amp; Wine Bar</h3>
-                      <p class="project-description">
-                        I helped the client transform a previously unused area into a dedicated coffee and wine bar
-                        using some old cabinets she had. By relocating all related items to these cabinets-and
-                        adding paint, tiles and mirrors-I created a beautiful, functional space for both coffee and
-                        wine while freeing up valuable room in the kitchen pantry.
-                      </p>
-                    </div>
-                    <div class="stage-gallery stage-gallery-single-comparison">
-                      <div class="photo-comparison" data-comparison="Coffee and wine bar">
-                        <figure class="stage-shot" data-stage="before">
-                          <img src="pics/wine_station/Coffe%20%26%20Wine%20Station%20-%20Before.jpeg" alt="Coffee and wine station before organization" loading="lazy" />
-                          <figcaption><span class="stage-label">Before</span></figcaption>
-                        </figure>
-                        <figure class="stage-shot" data-stage="midway">
-                          <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20midway.jpeg" alt="Coffee and wine station midway through organization" loading="lazy" />
-                          <figcaption><span class="stage-label">Midway</span></figcaption>
-                        </figure>
-                        <figure class="stage-shot" data-stage="after">
-                          <img src="pics/wine_station/Coffee%20%26%20Wine%20Station%20-%20After.jpeg" alt="Coffee and wine station after organization" loading="lazy" />
-                          <figcaption><span class="stage-label">After</span></figcaption>
-                        </figure>
-                      </div>
-                    </div>
-                  </article>
-                </div>
+              <div class="showcase-column">
+                <article class="showcase-card">
+                  <div class="showcase-head">
+                    <h3>Office</h3>
+                    <p class="project-description">
+                      I unpacked and organized a homeowner's new office into a highly functional and
+                      aesthetically pleasing space.
+                    </p>
+                  </div>
+                  <div class="stage-gallery">
+                    <figure class="stage-shot" data-stage="before">
+                      <img src="pics/office/Office%20-%20before.JPG" alt="Office before organization first angle" loading="lazy" />
+                      <figcaption><span class="stage-label">Before</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="before">
+                      <img src="pics/office/Office%20-%20before%202.JPG" alt="Office before organization second angle" loading="lazy" />
+                      <figcaption><span class="stage-label">Before</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="before">
+                      <img src="pics/office/Office%20-%20before%203.JPG" alt="Office before organization third angle" loading="lazy" />
+                      <figcaption><span class="stage-label">Before</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="after">
+                      <img src="pics/office/Office%20-%20After.jpg" alt="Office after organization first angle" loading="lazy" />
+                      <figcaption><span class="stage-label">After</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="after">
+                      <img src="pics/office/Office%20-%20After%202%20-%20redacted.jpg" alt="Office after organization second angle" loading="lazy" />
+                      <figcaption><span class="stage-label">After</span></figcaption>
+                    </figure>
+                  </div>
+                </article>
 
-                <div class="showcase-column">
-                  <article class="showcase-card">
-                    <div class="showcase-head">
-                      <h3>Office</h3>
-                      <p class="project-description">
-                        I unpacked and organized a homeowner's new office into a highly functional and
-                        aesthetically pleasing space.
-                      </p>
-                    </div>
-                    <div class="stage-gallery">
-                      <figure class="stage-shot" data-stage="before">
-                        <img src="pics/office/Office%20-%20before.JPG" alt="Office before organization first angle" loading="lazy" />
-                        <figcaption><span class="stage-label">Before</span></figcaption>
-                      </figure>
-                      <figure class="stage-shot" data-stage="before">
-                        <img src="pics/office/Office%20-%20before%202.JPG" alt="Office before organization second angle" loading="lazy" />
-                        <figcaption><span class="stage-label">Before</span></figcaption>
-                      </figure>
-                      <figure class="stage-shot" data-stage="before">
-                        <img src="pics/office/Office%20-%20before%203.JPG" alt="Office before organization third angle" loading="lazy" />
-                        <figcaption><span class="stage-label">Before</span></figcaption>
-                      </figure>
-                      <figure class="stage-shot" data-stage="after">
-                        <img src="pics/office/Office%20-%20After.jpg" alt="Office after organization first angle" loading="lazy" />
-                        <figcaption><span class="stage-label">After</span></figcaption>
-                      </figure>
-                      <figure class="stage-shot" data-stage="after">
-                        <img src="pics/office/Office%20-%20After%202%20-%20redacted.jpg" alt="Office after organization second angle" loading="lazy" />
-                        <figcaption><span class="stage-label">After</span></figcaption>
-                      </figure>
-                    </div>
-                  </article>
-
-                  <article class="showcase-card showcase-card-drawers">
-                    <div class="showcase-head">
-                      <h3>Drawers</h3>
-                      <p class="project-description">
-                        I use this folding method for both adults' and kids' clothing so everything is visible at a
-                        glance, instead of being stacked in layers.
-                      </p>
-                    </div>
-                    <div class="stage-gallery stage-gallery-drawers">
-                      <figure class="stage-shot" data-stage="after">
-                        <img src="pics/drawer/Drawer%20-%20After.jpeg" alt="Drawer after organization" loading="lazy" />
-                        <figcaption><span class="stage-label">After</span></figcaption>
-                      </figure>
-                      <figure class="stage-shot" data-stage="after">
-                        <img src="pics/drawer/Drawer%20Kids%20-%20After.jpeg" alt="Kids drawer after organization" loading="lazy" />
-                        <figcaption><span class="stage-label">After</span></figcaption>
-                      </figure>
-                    </div>
-                  </article>
-                </div>
+                <article class="showcase-card showcase-card-drawers">
+                  <div class="showcase-head">
+                    <h3>Drawers</h3>
+                    <p class="project-description">
+                      I use this folding method for both adults' and kids' clothing so everything is visible at a
+                      glance, instead of being stacked in layers.
+                    </p>
+                  </div>
+                  <div class="stage-gallery stage-gallery-drawers">
+                    <figure class="stage-shot" data-stage="after">
+                      <img src="pics/drawer/Drawer%20-%20After.jpeg" alt="Drawer after organization" loading="lazy" />
+                      <figcaption><span class="stage-label">After</span></figcaption>
+                    </figure>
+                    <figure class="stage-shot" data-stage="after">
+                      <img src="pics/drawer/Drawer%20Kids%20-%20After.jpeg" alt="Kids drawer after organization" loading="lazy" />
+                      <figcaption><span class="stage-label">After</span></figcaption>
+                    </figure>
+                  </div>
+                </article>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div class="project-pane" data-project-panel="donation-partners">
-            <p class="projects-note">
-              I'm committed to recycling and reusing whenever possible. In that spirit, here are some of the
-              donation partners I work with to help give my clients' unneeded items a new life and renewed
-              purpose.
-            </p>
-            <div class="partner-grid">
-              <article class="partner-card">
-                <h3>
-                  <a href="https://nccf-cares.org/#" target="_blank" rel="noopener noreferrer"
-                    >National Center for Children &amp; Families (NCCF), Bethesda, MD</a
-                  >
-                </h3>
-                <p>
-                  Supports children and families with practical essentials, including clothing, shoes, and
-                  household items in good condition.
-                </p>
-              </article>
-              <article class="partner-card">
-                <h3>
-                  <a href="https://awidercircle.org/" target="_blank" rel="noopener noreferrer"
-                    >A Wider Circle, Silver Spring, MD</a
-                  >
-                </h3>
-                <p>
-                  Redistributes furniture and household goods to help local families transition into stable
-                  housing.
-                </p>
-              </article>
-              <article class="partner-card">
-                <h3>
-                  <a
-                    href="https://www.iworksmc.org/in-kind-donations-and-program-needs"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Interfaith Clothing Center (ICC), Rockville, MD</a
-                  >
-                </h3>
-                <p>
-                  Provides clothing and related essentials for individuals and families through organized
-                  community support services.
-                </p>
-              </article>
-              <article class="partner-card">
-                <h3>
-                  <a href="https://habitatmm.org/restore/restore.html" target="_blank" rel="noopener noreferrer"
-                    >Local Habitat ReStore</a
-                  >
-                </h3>
-                <p>Accepts select furniture, home goods, and building materials in good condition.</p>
-              </article>
-            </div>
+      <section class="section tab-section" data-tab-panel="donation-partners" aria-labelledby="donation-partners-heading">
+        <div class="container">
+          <p class="eyebrow">Donation Partners</p>
+          <h2 id="donation-partners-heading">Give useful things a new home.</h2>
+          <p class="donation-note">
+            I'm committed to recycling and reusing whenever possible. In that spirit, here are some of the
+            donation partners I work with to help give my clients' unneeded items a new life and renewed
+            purpose.
+          </p>
+          <div class="partner-grid">
+            <article class="partner-card">
+              <h3>
+                <a href="https://nccf-cares.org/#" target="_blank" rel="noopener noreferrer"
+                  >National Center for Children &amp; Families (NCCF), Bethesda, MD</a
+                >
+              </h3>
+              <p>
+                Supports children and families with practical essentials, including clothing, shoes, and
+                household items in good condition.
+              </p>
+            </article>
+            <article class="partner-card">
+              <h3>
+                <a href="https://awidercircle.org/" target="_blank" rel="noopener noreferrer"
+                  >A Wider Circle, Silver Spring, MD</a
+                >
+              </h3>
+              <p>
+                Redistributes furniture and household goods to help local families transition into stable
+                housing.
+              </p>
+            </article>
+            <article class="partner-card">
+              <h3>
+                <a
+                  href="https://www.iworksmc.org/in-kind-donations-and-program-needs"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Interfaith Clothing Center (ICC), Rockville, MD</a
+                >
+              </h3>
+              <p>
+                Provides clothing and related essentials for individuals and families through organized
+                community support services.
+              </p>
+            </article>
+            <article class="partner-card">
+              <h3>
+                <a href="https://habitatmm.org/restore/restore.html" target="_blank" rel="noopener noreferrer"
+                  >Local Habitat ReStore</a
+                >
+              </h3>
+              <p>Accepts select furniture, home goods, and building materials in good condition.</p>
+            </article>
           </div>
         </div>
       </section>

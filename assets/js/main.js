@@ -1,11 +1,7 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
-const submenuOwner = document.querySelector(".has-submenu");
-const submenuToggle = document.querySelector(".submenu-toggle");
 const tabLinks = [...document.querySelectorAll(".tab-link[data-tab]")];
 const tabSections = [...document.querySelectorAll(".tab-section[data-tab-panel]")];
-const projectTabButtons = [...document.querySelectorAll(".project-tab[data-project-tab]")];
-const projectPanels = [...document.querySelectorAll(".project-pane[data-project-panel]")];
 const yearEl = document.querySelector("#year");
 
 if (yearEl) {
@@ -13,18 +9,12 @@ if (yearEl) {
 }
 
 const validTabs = new Set(tabSections.map((section) => section.dataset.tabPanel));
-const validProjectPanes = new Set(projectPanels.map((panel) => panel.dataset.projectPanel));
 
 const closeMobileNav = () => {
-  if (window.innerWidth <= 780 && siteNav && menuToggle) {
+  if (window.innerWidth <= 1200 && siteNav && menuToggle) {
     siteNav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded", "false");
-  }
-
-  if (submenuOwner && submenuToggle) {
-    submenuOwner.classList.remove("submenu-open");
-    submenuToggle.setAttribute("aria-expanded", "false");
-    submenuToggle.textContent = "+";
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
   }
 };
 
@@ -32,68 +22,29 @@ if (menuToggle && siteNav) {
   menuToggle.addEventListener("click", () => {
     const expanded = menuToggle.getAttribute("aria-expanded") === "true";
     menuToggle.setAttribute("aria-expanded", String(!expanded));
-    siteNav.classList.toggle("open");
-
-    if (expanded && submenuOwner && submenuToggle) {
-      submenuOwner.classList.remove("submenu-open");
-      submenuToggle.setAttribute("aria-expanded", "false");
-      submenuToggle.textContent = "+";
-    }
+    menuToggle.setAttribute("aria-label", expanded ? "Open navigation menu" : "Close navigation menu");
+    siteNav.classList.toggle("open", !expanded);
   });
 }
 
-if (submenuToggle && submenuOwner) {
-  submenuToggle.addEventListener("click", () => {
-    const isOpen = submenuOwner.classList.toggle("submenu-open");
-    submenuToggle.setAttribute("aria-expanded", String(isOpen));
-    submenuToggle.textContent = isOpen ? "-" : "+";
-  });
-}
-
-const setActiveProjectPane = (paneName, updateHash = true) => {
-  const pane = validProjectPanes.has(paneName) ? paneName : "before-after";
-
-  projectTabButtons.forEach((button) => {
-    const isActive = button.dataset.projectTab === pane;
-    button.classList.toggle("active", isActive);
-    button.setAttribute("aria-selected", String(isActive));
-  });
-
-  projectPanels.forEach((panel) => {
-    panel.classList.toggle("active", panel.dataset.projectPanel === pane);
-  });
-
-  if (updateHash) {
-    history.replaceState(null, "", `#${pane}`);
-  }
-
-  return pane;
-};
-
-const setActiveTab = (tabName, projectPane = null, updateHash = true) => {
-  const safeTab = validTabs.has(tabName) ? tabName : "home";
+const setActiveTab = (tabName, updateHash = true) => {
+  const targetTab = tabName === "projects" ? "before-after" : tabName;
+  const safeTab = validTabs.has(targetTab) ? targetTab : "home";
 
   tabSections.forEach((section) => {
     section.classList.toggle("active", section.dataset.tabPanel === safeTab);
   });
 
   tabLinks.forEach((link) => {
-    const isActive = link.dataset.tab === safeTab;
-    if (isActive) {
+    if (link.dataset.tab === safeTab) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
     }
   });
 
-  let activeProjectPane = null;
-  if (safeTab === "projects") {
-    activeProjectPane = setActiveProjectPane(projectPane || "before-after", false);
-  }
-
   if (updateHash) {
-    const targetHash = safeTab === "projects" && activeProjectPane ? activeProjectPane : safeTab;
-    history.replaceState(null, "", `#${targetHash}`);
+    history.replaceState(null, "", `#${safeTab}`);
   }
 
   closeMobileNav();
@@ -103,24 +54,15 @@ const setActiveTab = (tabName, projectPane = null, updateHash = true) => {
 tabLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    setActiveTab(link.dataset.tab, link.dataset.projectPane || null, true);
+    setActiveTab(link.dataset.tab);
   });
 });
 
-projectTabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setActiveTab("projects", button.dataset.projectTab, true);
-  });
+const initialHash = window.location.hash.slice(1);
+setActiveTab(initialHash, initialHash === "projects");
+window.addEventListener("hashchange", () => {
+  setActiveTab(window.location.hash.slice(1), false);
 });
-
-const initialHash = window.location.hash.replace("#", "");
-if (validTabs.has(initialHash)) {
-  setActiveTab(initialHash, null, false);
-} else if (validProjectPanes.has(initialHash)) {
-  setActiveTab("projects", initialHash, false);
-} else {
-  setActiveTab("home", null, false);
-}
 
 document.querySelectorAll("[data-comparison]").forEach((comparison) => {
   const before = comparison.querySelector('[data-stage="before"]');
