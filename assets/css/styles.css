@@ -664,7 +664,8 @@ p {
   align-items: start;
 }
 
-.stage-gallery-kitchen {
+.stage-gallery-kitchen,
+.stage-gallery-wardrobe {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
@@ -688,6 +689,11 @@ p {
   aspect-ratio: 1 / 1;
   height: auto;
   transition: transform 0.24s ease, filter 0.24s ease;
+}
+
+.stage-gallery-portrait .stage-shot img {
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
 }
 
 .stage-shot:hover img {
@@ -1020,7 +1026,8 @@ p {
     min-height: auto;
   }
 
-  .stage-gallery-kitchen {
+  .stage-gallery-kitchen,
+  .stage-gallery-wardrobe {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
